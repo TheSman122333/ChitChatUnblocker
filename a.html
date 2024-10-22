@@ -28,6 +28,35 @@
     <a id="youtube-link" class="button" href="#">YouTube</a>
     <a id="snapchat-link" class="button" href="#">Snapchat</a>
 
+    <script>
+        // Function to apply background settings from localStorage
+        function applyBackgroundSettings() {
+            const backgroundColor = localStorage.getItem('backgroundColor');
+            const backgroundImage = localStorage.getItem('backgroundImage');
+
+            if (backgroundColor) {
+                document.body.style.backgroundColor = backgroundColor;
+            }
+            if (backgroundImage) {
+                document.body.style.backgroundImage = `url(${backgroundImage})`;
+                document.body.style.backgroundSize = 'cover';
+            }
+        }
+
+        // Apply saved background settings when the page loads
+        window.addEventListener('load', function() {
+            applyBackgroundSettings();
+        });
+
+        // Detect keypress and check for panic key
+        document.addEventListener('keydown', function(event) {
+            const savedPanicKey = localStorage.getItem('panicKey');
+            if (savedPanicKey && event.key.toLowerCase() === savedPanicKey) {
+                window.location.href = 'https://www.google.com'; // Redirect to Google on panic key press
+            }
+        });
+    </script>
+
     <script src="/uv/uv.bundle.js" defer></script>
     <script src="/uv/uv.config.js" defer></script>
     <script src="register-sw.js" defer></script>
