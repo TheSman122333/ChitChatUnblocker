@@ -6,7 +6,7 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background-image: url('https://cdn.prod.website-files.com/5a9ee6416e90d20001b20038/64f5e02cb5805eb6fd8e503c_Rectangle%20(98).svg');
+  background-image: url('background.png');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
