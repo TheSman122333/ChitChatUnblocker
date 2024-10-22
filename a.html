@@ -20,13 +20,13 @@
         <a href="/s.html" class="button">Settings</a>
     </div>
     
-    <a id="facebook-link">Facebook</a>
-    <a id="tiktok-link">TikTok</a>
-    <a id="discord-link">Discord</a>
-    <a id="shellshock-link">Shellshockers</a>
-    <a id="instagram-link">Instagram</a>
-    <a id="youtube-link">YouTube</a>
-    <a id="snapchat-link">Snapchat</a>
+    <a id="facebook-link" href="#">Facebook</a>
+    <a id="tiktok-link" href="#">TikTok</a>
+    <a id="discord-link" href="#">Discord</a>
+    <a id="shellshock-link" href="#">Shellshockers</a>
+    <a id="instagram-link" href="#">Instagram</a>
+    <a id="youtube-link" href="#">YouTube</a>
+    <a id="snapchat-link" href="#">Snapchat</a>
 
     <script src="/uv/uv.bundle.js" defer></script>
     <script src="/uv/uv.config.js" defer></script>
@@ -36,14 +36,17 @@
     <script src="error.js" defer></script> 
 
     <script>
-        // Use JavaScript to dynamically assign the correct URLs
-        document.getElementById('facebook-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://facebook.com');
-        document.getElementById('tiktok-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://tiktok.com');
-        document.getElementById('discord-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://discord.com');
-        document.getElementById('shellshock-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://shellshock.io');
-        document.getElementById('instagram-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://instagram.com');
-        document.getElementById('youtube-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://youtube.com');
-        document.getElementById('snapchat-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://snapchat.com');
+        // Ensure links are clickable by setting initial hrefs to "#"
+        window.addEventListener('load', function() {
+            // Use JavaScript to dynamically assign the correct URLs
+            document.getElementById('facebook-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://facebook.com');
+            document.getElementById('tiktok-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://tiktok.com');
+            document.getElementById('discord-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://discord.com');
+            document.getElementById('shellshock-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://shellshock.io');
+            document.getElementById('instagram-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://instagram.com');
+            document.getElementById('youtube-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://youtube.com');
+            document.getElementById('snapchat-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://snapchat.com');
+        });
     </script>
 </body>
 </html>
