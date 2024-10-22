@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     
-    <title>Chit</title>
+    <title>Chit - Settings</title>
 </head>
 <body>
     <div class="navbar">
@@ -46,23 +46,44 @@
             // Panic key setting
             panicKey = document.getElementById('panic-key').value.toLowerCase();
 
+            // Save panic key in localStorage
+            localStorage.setItem('panicKey', panicKey);
+
             // Background color setting
             const backgroundColor = document.getElementById('background-color').value;
-            document.body.style.backgroundColor = backgroundColor;
+            localStorage.setItem('backgroundColor', backgroundColor);
 
             // Background image setting
             const backgroundImageUrl = document.getElementById('background-image').value;
-            if (backgroundImageUrl) {
-                document.body.style.backgroundImage = `url(${backgroundImageUrl})`;
+            localStorage.setItem('backgroundImage', backgroundImageUrl);
+
+            // Apply the background immediately
+            applyBackgroundSettings();
+        }
+
+        // Function to apply background settings
+        function applyBackgroundSettings() {
+            const backgroundColor = localStorage.getItem('backgroundColor');
+            const backgroundImage = localStorage.getItem('backgroundImage');
+
+            if (backgroundColor) {
+                document.body.style.backgroundColor = backgroundColor;
+            }
+            if (backgroundImage) {
+                document.body.style.backgroundImage = `url(${backgroundImage})`;
                 document.body.style.backgroundSize = 'cover';
-            } else {
-                document.body.style.backgroundImage = '';
             }
         }
 
+        // Apply saved background settings when the page loads
+        window.addEventListener('load', function() {
+            applyBackgroundSettings();
+        });
+
         // Detect keypress and check for panic key
         document.addEventListener('keydown', function(event) {
-            if (panicKey && event.key.toLowerCase() === panicKey) {
+            const savedPanicKey = localStorage.getItem('panicKey');
+            if (savedPanicKey && event.key.toLowerCase() === savedPanicKey) {
                 window.location.href = 'https://www.google.com'; // Redirect to Google on panic key press
             }
         });
