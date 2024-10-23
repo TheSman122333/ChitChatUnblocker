@@ -60,11 +60,8 @@
         <a href="/s.html" class="button">Settings</a>
     </div>
     
-    <a id="facebook-link" class="button" href="#">Facebook</a>
-    <a id="tiktok-link" class="button" href="#">TikTok</a>
     <a id="discord-link" class="button" href="#">Discord</a>
     <a id="shellshock-link" class="button" href="#">Shellshockers</a>
-    <a id="instagram-link" class="button" href="#">Instagram</a>
     <a id="youtube-link" class="button" href="#">YouTube</a>
     <a id="snapchat-link" class="button" href="#">Snapchat</a>
 
@@ -108,11 +105,8 @@
         // Ensure links are clickable by setting initial hrefs to "#"
         window.addEventListener('load', function() {
             // Use JavaScript to dynamically assign the correct URLs
-            document.getElementById('facebook-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://facebook.com');
-            document.getElementById('tiktok-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://tiktok.com');
             document.getElementById('discord-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://discord.com');
-            document.getElementById('shellshock-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://shellshock.io');
-            document.getElementById('instagram-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://instagram.com');
+            document.getElementById('shellshock-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://shellshock.io')
             document.getElementById('youtube-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://youtube.com');
             document.getElementById('snapchat-link').href = __uv$config.prefix + __uv$config.encodeUrl('https://snapchat.com');
         });
